@@ -29,13 +29,13 @@ function App() {
       setMode('dark')
       document.body.style.backgroundColor='#042743'
       showAlert("Dark mode is Enabled", "success")
-      document.title = "TextUtility-DarkMode"
+      // document.title = "TextUtility-DarkMode"
     }
     else{
       setMode('light')
       document.body.style.backgroundColor='white'
       showAlert("Light mode is Enabled", "success")
-      document.title="TextUtility-LightMode"
+      // document.title="TextUtility-LightMode"
     }
   }
   return (
@@ -43,7 +43,7 @@ function App() {
       <Navbar title="TextUtility" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert} />
       <Routes>
-          <Route exact path="/about"  element={<About/>} />
+          <Route exact path="/about"  element={<About mode={mode} />} />
           <Route exact path="/"
               element={<TextForm heading="Enter The Text Below" mode={mode} showAlert={showAlert}/>}>
           </Route>
